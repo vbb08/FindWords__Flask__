@@ -1,0 +1,54 @@
+
+{% extends 'layout.html' %}
+
+{% block head %}
+<title>Click on CREATE button to create a password</title>
+{% endblock %}
+
+
+<!--description of body block-->
+{% block body %}
+
+<div class="content">
+    <h3 style="text-align: center">testing</h3>
+    <form method="get" action="/bla/">
+            <button type="submit" name="Click"> test button </button>
+            <h3 style="text-align: center"</h3>
+    </form>
+    <p id='line'>{{ testing }}</p>
+</div>
+
+
+<!--
+<div class="content">
+    <h3 style="text-align: center">Click on CREATE button to get a 14 digits password</h3>
+    <form method="get" action="/pass/">
+            <button type="submit" name="Click"> CREATE </button>
+            <h3 style="text-align: center"</h3>
+    </form>
+    <p id='password'>{{ show_password }}</p>
+</div>
+-->
+
+<div class="inner">
+  <p>Paste in the box, in .txt format, a text, max 100 words long, to find out which are the 10 most common words used
+  </p>
+<form method="post" action="#">
+  <div class="fields">
+    <div class="field">
+      <textarea name="message" id="message" rows="10"></textarea>
+    </div>
+  </div>
+        <ul class="actions">
+    <li><a href="#a" class="button submit">UPLOAD TEXT </a></li>
+        </ul>
+</form>
+<form method="get" action="/commonwords/">
+        <button type="submit" name="Click"> FIND MOST COMMON WORDS </button>
+        <h3 style="text-align: center"</h3>
+</form>
+<p id='k'>{{ commonwords }}</p>
+</div>
+
+
+{% endblock %}
