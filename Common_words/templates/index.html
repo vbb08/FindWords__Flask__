@@ -5,18 +5,8 @@
 <title>Click on CREATE button to create a password</title>
 {% endblock %}
 
-
 <!--description of body block-->
 {% block body %}
-
-<div class="content">
-    <h3 style="text-align: center">testing</h3>
-    <form method="get" action="/bla/">
-            <button type="submit" name="Click"> test button </button>
-            <h3 style="text-align: center"</h3>
-    </form>
-    <p id='line'>{{ testing }}</p>
-</div>
 
 
 <!--
@@ -33,6 +23,8 @@
 <div class="inner">
   <p>Paste in the box, in .txt format, a text, max 100 words long, to find out which are the 10 most common words used
   </p>
+
+<!--
 <form method="post" action="#">
   <div class="fields">
     <div class="field">
@@ -43,11 +35,54 @@
     <li><a href="#a" class="button submit">UPLOAD TEXT </a></li>
         </ul>
 </form>
+-->
+<!--
+<form action="{{url_for('commonwords')}}" method="post"
+  <textarea name="text"></textarea>
+  <input type="submit"
+</form>
+-->
+
+<form method="post" action="/commonwords/">
+    <div class="field">
+<!--
+      <input type="text" name="title"
+               placeholder="Paste the text here"
+               value="{{ request.form['title'] }}"></input>
+-->
+      <textarea type="text" name="content"
+                  placeholder="Paste the text here"
+                  rows="15"
+                  cols="60"
+                  >"{{ request.form['content'] }}"></textarea>
+
+      <button type="submit">Submit</button>
+    </div>
+
+</form>
+
+
+<!--
+<form method="post" action="/commonwords/">
+    <div class="field">
+      <textarea name="message" id="message" rows="10"></textarea>
+    </div>
+
+</form>
+
+<!-- GET OPTION
 <form method="get" action="/commonwords/">
-        <button type="submit" name="Click"> FIND MOST COMMON WORDS </button>
+  <div class="field">
+    <textarea name="message" id="message" rows="10"></textarea>
+</div>
+
+        <button type="submit" name="Click"> FIND 10 MOST COMMON WORDS </button>
         <h3 style="text-align: center"</h3>
 </form>
+-->
+
 <p id='k'>{{ commonwords }}</p>
+
 </div>
 
 
