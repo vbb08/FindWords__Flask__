@@ -30,21 +30,23 @@ def commonwords():
         quit()
 '''
 
+#use the text area content as the input text
     if request.method == 'POST':
 #        title = request.form['title']
         content = request.form['content']
         fh=content
         fh=list()
         fh.append({'content': content})
-#        fh.append({'title': title, 'content': content})
-#        return redirect(url_for('index'))
 
+#construction of a dictionary of the inserted text
         dic=dict()
-#        fh=str()
-        for line in fh:
-            print(line)
+        words=content.split()
+        for word in words:
+            dic[word]=dic.get(word,0)+1
+        print(dic)
 
-    return render_template('index.html' , commonwords = line)
+    return render_template('index.html' , commonwords = dic)
+
 
 
 if __name__ == "__main__":
