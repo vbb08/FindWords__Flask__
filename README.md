@@ -9,7 +9,7 @@ Create an app to find out the 10 most common words used in a text.
 - Run *commonapp.py* file
 - Open localhost in browser 
 - Copy in the textbox area a text
-- Click on the **"FIND"** buttom to show the 10 most common words used in the text
-- Click on the **"RESET"** buttom to clear the text area
+- Click on the **"FIND"** button to show the 10 most common words used in the text
+- Click on the **"RESET"** button to clear the text area
 
 
