@@ -5,12 +5,13 @@ body, html {
   text-align: center;
 }
 form, textarea{
-  display: block
-  text-align: center
+  
+  text-align: center;
   font-size: 14px;
 }
 form, button {
-
+  display: block;
+  margin: 0 auto;
     color: black;
     font-size: 16px;
     cursor: pointer;
