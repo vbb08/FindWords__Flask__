@@ -7,47 +7,35 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-###################################
-'''
-#to show the test of the .txt file
-@app.route('/apri/', methods=['GET'])
-def request():
-    fname = input("Enter file name: ")
-    fh=open(fname,'r')
-    return render_template("index.html", apri=fh)
-'''
-
-
-@app.route('/commonwords/', methods=['GET', 'POST'])
+@app.route('/commonwords/', methods=['GET','POST'])
 def commonwords():
-    '''
-
-    fname = input("Enter file name: ")
-    try:
-        fh=open(fname,'r')
-    except:
-        print('Wrong file name. Insert a valid file name:')
-        quit()
-'''
+    
 
 #use the text area content as the input text
     if request.method == 'POST':
-#        title = request.form['title']
         content = request.form['content']
-        fh=content
-        fh=list()
-        fh.append({'content': content})
 
 #construction of a dictionary of the inserted text
         dic=dict()
         words=content.split()
         for word in words:
             dic[word]=dic.get(word,0)+1
-        print(dic)
+#        print(dic)
 
-    return render_template('index.html' , commonwords = dic)
+#use of tuple to reverse the order key/value in the dictionary previously created
+        lst=list()
+        for k,v in dic.items():
+            newtup=(v,k)
+            lst.append(newtup)
+#        print('flipped', lst)
+        lst=sorted(lst, reverse=True)
 
+#print out of the 10 most common words with the scheme : (times used,'word')
+        for v,k in lst[:10]:
+            print(k,v)
 
+        common_words = " ".join(str(x) for x in lst[:10])
+        return render_template('index.html', commonwords=common_words, content=content)
 
 if __name__ == "__main__":
     app.run(debug=True)
