@@ -4,7 +4,7 @@
 Create an app to find out the 10 most common words used in a copied text.
 
 ### How to run the app:
-- Clone git repo https://github.com/vbb08/FindWords__Flask__
+- Clone this git Repo
 - Python 3.8 or newer version required: Verify Python version installed with command: python --version
 - Run *commonapp.py* file
 - Open localhost (http://127.0.0.1:5000) in browser 
